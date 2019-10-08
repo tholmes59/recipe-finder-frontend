@@ -15,7 +15,7 @@ export const clearCurrentUser = () => {
 
 
 
-export const login = (credentials, history) => {
+export const login = (credentials) => {
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/login", {
             credentials: "include",
@@ -31,6 +31,37 @@ export const login = (credentials, history) => {
                 dispatch(setCurrentUser(r.data))
                 dispatch(resetLogin())
                
+            }
+        })
+        .catch(console.log)     
+    }
+}
+
+export const logout = () => {
+    return dispatch => {
+      dispatch(clearCurrentUser())
+      return fetch('http://localhost:3001/api/v1/logout', {
+        credentials: "include",
+        method: "DELETE"
+      })
+    }
+  }
+
+  export const getCurrentUser = () => {
+    return dispatch => {
+        return fetch("http://localhost:3001/api/v1/get_current_user", {
+            credentials: "include",
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        })
+        .then(r => r.json())
+        .then(r => {   
+            if (r.error) {
+                alert(r.error)
+            } else {
+                dispatch(setCurrentUser(r.data))
             }
         })
         .catch(console.log)     
