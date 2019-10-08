@@ -30,7 +30,7 @@ export const login = (credentials, history) => {
             } else {
                 dispatch(setCurrentUser(r.data))
                 dispatch(resetLogin())
-                history.push('/')
+               
             }
         })
         .catch(console.log)     
