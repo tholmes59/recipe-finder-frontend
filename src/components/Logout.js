@@ -9,7 +9,7 @@ const Logout = (props) => {
             props.logout()
         }
     }>
-        <input type="submit" value=" Log Out"/>
+        <input type="submit" value="Log Out"/>
     </form>
     )
 }
