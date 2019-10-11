@@ -6,11 +6,12 @@ export const listRecipes = recipes => {
     }
 }
 
-export const searchRecipe = query => {
+export const searchRecipe = search => {
     return (dispatch) => {
-        return fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${query}`)
+        return fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${search}`)
         .then(r => r.json())
         .then(data => {
+            console.log(data)
             if (data.error) {
               alert(data.error)
             } else {
