@@ -10,15 +10,15 @@ export const searchRecipe = search => {
     return (dispatch) => {
         return fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${search}`)
         .then(r => r.json())
-        .then(data => {
-            console.log(data)
-            if (data.error) {
-              alert(data.error)
+        .then(recipes => {
+          console.log(recipes.recipes)
+            if (recipes.error) {
+              alert(recipes.error)
             } else {
-              dispatch(listRecipes(data))
+              dispatch(listRecipes(recipes.recipes))
+              
             }
           })
         .catch(console.log)  
-        
     }
 }
