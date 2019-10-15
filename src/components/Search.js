@@ -1,6 +1,7 @@
 import React from 'react'
 import { searchRecipe } from '../actions/recipeSearch'
 import { connect } from 'react-redux'
+import SearchResults from './SearchResults'
 
 class Search extends React.Component {
 
@@ -25,10 +26,13 @@ class Search extends React.Component {
 
     render() {
         return (
+            <>
             <form onSubmit={this.handleSubmit}>
                 <input type="text" value={this.state.search} name="search" onChange={this.handleChange} placeholder="chicken,thigh" />
                 <input value="Search" type="submit" />
             </form>
+            <SearchResults recipes={this.props.recipes}/>
+            </>
         )
     }
 
@@ -36,7 +40,7 @@ class Search extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        search: state.recipeSearch
+        recipes: state.recipeSearch,
     }
 }
 
