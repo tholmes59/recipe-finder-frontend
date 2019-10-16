@@ -8,10 +8,8 @@ const SearchResults = props => {
     const recipeCards = props.recipes.length > 0 ? props.recipes.map(recipe => <RecipeCard key={recipe.recipe_id} recipe={recipe} />) : null;
         
     return (
-        <div>
-           <ul>
+        <div className="recipeCard-container">
                {recipeCards}
-           </ul>
         </div>
     )
     }
