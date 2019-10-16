@@ -11,11 +11,11 @@ class RecipeCard extends React.Component {
     render () {
         return (
             <>
-            <div>
-                <img src={this.props.recipe.image_url} alt="Food pic" />
+            <div className="recipeCard">
+                <img src={this.props.recipe.image_url} alt="Food pic" className="recipeCard-img"/>
                 <p>{this.props.recipe.title}</p>
                 <p>Recipe provided by {this.props.recipe.publisher}</p>
-                <button type="button" onClick={this.handleClick}>Recipe Details</button>
+                <button type="button" onClick={this.handleClick} className="recipeCard-button">Recipe Details</button>
             </div>
             </>
         )
