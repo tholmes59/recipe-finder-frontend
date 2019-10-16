@@ -39,7 +39,7 @@ export const getFavorites = () => {
     }
 }
 
-export const addRecipeToFavorits = (recipe) => {
+export const addRecipeToFavorites = (recipe) => {
     return dispatch => {
         const recipeInfo = {
             title: recipe.title,
