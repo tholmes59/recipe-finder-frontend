@@ -1,13 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipe } from '../actions/recipeSearch'
+import { addRecipeToFavorites } from '../actions/favorites'
 
 class ListRecipe extends React.Component {
 
     // componentDidMount() {
     //     this.props.fetchRecipe(this.props.recipe.recipe_id)  
     // }
-    
+    handleClick = event => {
+        event.preventDefault()
+        addRecipeToFavorites(this.props.recipeItems)
+    }
 
     render() {
         // console.log(this.props.recipeItems.recipe)
@@ -23,7 +27,8 @@ class ListRecipe extends React.Component {
                    </ul>
                    )
                })}
-               <a href={this.props.recipeItems && this.props.recipeItems.source_url} target="_blank" rel="noopener noreferrer">Full Recipe Here</a>
+               <a href={this.props.recipeItems && this.props.recipeItems.source_url} target="_blank" rel="noopener noreferrer">Full Recipe Here</a><br/>
+               <button onClick={this.handleClick}>Add to Favorites</button>
             </div>
         )
     }
@@ -36,4 +41,4 @@ const mapStateToProps = state => {
     
 }
 
-export default connect(mapStateToProps, { fetchRecipe })(ListRecipe);
+export default connect(mapStateToProps, { fetchRecipe, addRecipeToFavorites })(ListRecipe);
