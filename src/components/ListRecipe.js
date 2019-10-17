@@ -10,7 +10,7 @@ class ListRecipe extends React.Component {
     // }
     handleClick = event => {
         event.preventDefault()
-        addRecipeToFavorites(this.props.recipeItems)
+        this.props.addRecipeToFavorites(this.props.recipeItems)
     }
 
     render() {
