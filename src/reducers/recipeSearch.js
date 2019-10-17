@@ -4,7 +4,8 @@ export default (state = [], action) => {
             return action.recipes
         case 'DISPLAY_RECIPE':
             return {...state, recipe: action.recipeItems}
-        
+        case 'CLEAR_RECIPES':
+            return []
         default:
             return state
     }
