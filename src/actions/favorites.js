@@ -40,9 +40,10 @@ export const getFavorites = () => {
 }
 
 export const addRecipeToFavorites = (recipe) => {
+    console.log(recipe)
     return dispatch => {
         const recipeInfo = {
-            title: recipe.title,
+            recipe_title: recipe.title,
             recipe_identifier: recipe.recipe_id
         }
         console.log(recipeInfo)
@@ -56,7 +57,6 @@ export const addRecipeToFavorites = (recipe) => {
         })
         .then(r => r.json())
         .then(r => {
-            console.log(r)
             if (r.error) {
                 alert(r.error)
             } else {
