@@ -20,11 +20,11 @@ export const clearFavorites = () => {
 
 export const getFavorites = () => {
     return dispatch => {
-        return fetch("http://loaclhost:3001/api/v1/favorites", {
+        return fetch("http://localhost:3001/api/v1/favorites", {
             credentials: "include",
             method: "GET",
             headers: {
-                "Content-type": "application/json"
+                "Content-Type": "application/json"
             },
         })
         .then(r => r.json())
@@ -43,22 +43,24 @@ export const addRecipeToFavorites = (recipe) => {
     return dispatch => {
         const recipeInfo = {
             title: recipe.title,
-            recipe_identifier: recipe.recipe_identifier
+            recipe_identifier: recipe.recipe_id
         }
-        return fetch("http://loaclhost:3001/api/v1/recipes", {
+        console.log(recipeInfo)
+        return fetch("http://localhost:3001/api/v1/recipes", {
             credentials: "include",
             method: "POST",
             headers: {
-                "Content-type": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(recipeInfo)
         })
         .then(r => r.json())
         .then(r => {
+            console.log(r)
             if (r.error) {
                 alert(r.error)
             } else {
-                dispatchEvent(getFavorites())
+                dispatch(getFavorites())
                 alert('Saved to Favorites!')
             }
         })
