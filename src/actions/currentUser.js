@@ -1,5 +1,7 @@
 import { resetLogin } from "./login.js"
 import { resetSignup } from './signup.js'
+import { getFavorites, clearFavorites } from "./favorites.js"
+import { clearRecipes } from './recipeSearch'
 
 export const setCurrentUser = user => {
     return {
@@ -16,7 +18,7 @@ export const clearCurrentUser = () => {
 
 
 
-export const login = (credentials) => {
+export const login = (credentials, history) => {
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/login", {
             credentials: "include",
@@ -30,8 +32,9 @@ export const login = (credentials) => {
                 alert(r.error)
             } else {
                 dispatch(setCurrentUser(r.data))
+                dispatch(getFavorites())
                 dispatch(resetLogin())
-               
+                history.push('/')
             }
         })
         .catch(console.log)     
@@ -41,10 +44,20 @@ export const login = (credentials) => {
 export const logout = () => {
     return dispatch => {
       dispatch(clearCurrentUser())
+      dispatch(clearFavorites())
       return fetch('http://localhost:3001/api/v1/logout', {
         credentials: "include",
         method: "DELETE"
       })
+      .then(r => r.json())
+      .then(r => {
+        if (r.error) {
+          alert(r.error)
+        } else {
+          dispatch(clearRecipes())
+        }
+      })
+      .catch(console.log)
     }
   }
 
@@ -63,13 +76,14 @@ export const logout = () => {
                 alert(r.error)
             } else {
                 dispatch(setCurrentUser(r.data))
+                dispatch(getFavorites())
             }
         })
         .catch(console.log)     
     }
 }
 
-export const signup = (credentials) => {
+export const signup = (credentials, history) => {
     return dispatch => {
       const userInfo = {
         user: credentials
@@ -88,7 +102,9 @@ export const signup = (credentials) => {
             alert(response.error)
           } else {
             dispatch(setCurrentUser(response.data))
+            dispatch(getFavorites())
             dispatch(resetSignup())
+            history.push('/')
           }
         })
         .catch(console.log)
