@@ -4,7 +4,7 @@ export default (state = [], action) => {
             return action.favorites
         case "ADD_FAVORITE":
             return action.favorite
-        case "CLEAR_FAVORITE":
+        case "CLEAR_FAVORITES":
             return []
         default:
             return state
