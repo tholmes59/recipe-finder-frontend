@@ -46,3 +46,9 @@ export const fetchRecipe = id => {
       .catch(console.log)  
   }
 }
+
+export const clearRecipes = () => {
+  return {
+    type: "CLEAR_RECIPES"
+  }
+}
