@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Login from './components/Login'
-import Logout from './components/Logout'
+import Home from './components/Home'
 import { getCurrentUser } from "./actions/currentUser.js"
 import { connect } from 'react-redux'
 import Signup from './components/Signup';
@@ -23,23 +23,24 @@ class App extends React.Component {
       <div className="App">
         <Router>
           <Route>
-            <Navbar />
+            {this.props.loggedIn ? <Navbar /> : <Home />}
           </Route>
-        </Router>
-       <Login/>
-       <Signup />
-       <Search />
+       <Route exact path='/signup' component={Signup}/>
+       <Route exact path='/login' component={Login}/>
+       <Route exact path='/search' component={Search}/>
+       <Route exact path='/favorites' component={Favorites}/>
        <ListRecipe />
-       <Favorites />
+       </Router>
        <Footer />
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ currentUser }) => {
+const mapStateToProps = state => {
   return {
-    currentUser
+    loggedIn: !!state.currentUser,
+    favorites: state.favorites
   }
 }
 
