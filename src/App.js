@@ -7,6 +7,10 @@ import { connect } from 'react-redux'
 import Signup from './components/Signup';
 import Search from './components/Search'
 import ListRecipe from './components/ListRecipe';
+import Favorites from './components/Favorites'
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends React.Component {
 
@@ -17,10 +21,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-       {this.props.currentUser ? <Logout/> : <Login/>}
+        <Router>
+          <Route>
+            <Navbar />
+          </Route>
+        </Router>
+       <Login/>
        <Signup />
        <Search />
        <ListRecipe />
+       <Favorites />
+       <Footer />
       </div>
     );
   }
