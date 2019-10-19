@@ -23,11 +23,12 @@ class Home extends React.Component {
         return(
             <div>
                 <h2>Welcome to Recipe Finder</h2>
-                {this.state.clicked ? 
+                { !this.state.clicked ?
                 <span>
                     <button onClick={this.handleClick}><Link to="/signup">Sign Up</Link></button>
                     OR <button onClick={this.handleClick}><Link to="/login">Login</Link></button>
-                </span> : null
+                </span>
+                : null
                 }
             </div>
         )
