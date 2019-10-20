@@ -6,11 +6,14 @@ import { NavLink } from 'react-router-dom'
 const Navbar = (props) => {
 
     return (
-        <div>
-            <NavLink to="/search">Search </NavLink>
-            <NavLink to="/favorites">Favorites </NavLink>
-            {props.loggedIn ? <Logout /> : null}
-        </div>
+        <nav className="navbar">
+            <p className="logo">Recipe Finder</p>
+            <ul className="nav-links">
+               <li className="nav-item"><NavLink to="/search">Search </NavLink></li> 
+               <li className="nav-item"><NavLink to="/favorites">Favorites </NavLink></li>
+               <li className="nav-item">{props.loggedIn ? <Logout /> : null}</li>
+            </ul>
+        </nav>
     )
 }
 
