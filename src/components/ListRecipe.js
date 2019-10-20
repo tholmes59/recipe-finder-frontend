@@ -6,8 +6,9 @@ import { addRecipeToFavorites } from '../actions/favorites'
 class ListRecipe extends React.Component {
 
     // componentDidMount() {
-    //     this.props.fetchRecipe(this.props.recipe.recipe_id)  
+    //     this.props.fetchRecipe(this.props.recipeItems && this.props.recipeItems.recipe_id);
     // }
+
     handleClick = event => {
         event.preventDefault()
         this.props.addRecipeToFavorites(this.props.recipeItems)
@@ -19,7 +20,7 @@ class ListRecipe extends React.Component {
             <div>
                <h1>{this.props.recipeItems && this.props.recipeItems.title}</h1>
                <img src={this.props.recipeItems && this.props.recipeItems.image_url} alt="Recipe" />
-               <h3>Ingrediants</h3>
+               <h3>Ingredients</h3>
                {this.props.recipeItems && this.props.recipeItems.ingredients.map((item, index) => {
                    return (
                    <ul key={index}>
