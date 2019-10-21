@@ -1,12 +1,14 @@
 .App {
   text-align: center;
+  /* background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg); */
+}
+.body {
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  /* background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg); */
 }
 
-.App-logo {
-  height: 40vmin;
-}
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -15,8 +17,209 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+/* .home {
+  background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg);
+  min-width: 1020px;
+  height: 960px;
+  background-color: #333;
+  background-size: cover;
+  background-position: 50%;
+  display: grid;
+  background-position: center;
+  justify-content: center;
+  align-items: center; 
+} */
+
+ /* ***** Signup and Login Forms ****** */
+
+.form {
+  background:whitesmoke;
+	width:500px;
+	max-width:100%;
+	box-sizing:border-box;
+	padding:15px;
+	margin: auto;
+	position:relative;
+  z-index:1;
+  border-style: solid;
 }
 
-.App-link {
-  color: #09d3ac;
+/* **** RecipeCard styling **** */
+
+.recipeCard-container {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 2rem;
+  padding: 1.5rem;
+}
+
+.recipeCard {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  box-shadow: 0px 1px 5px #555;
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+
+.recipeCard-img {
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  max-height: 12em;
+}
+
+.recipeCard-button {
+  /* display: block; */
+  background-color: tomato;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: .3s ease-out;
+}
+
+.recipeCard-button:hover {
+  background-color: green;
+}
+
+/* ********** Footer ************ */
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: -40px;
+  background-color: rgb(207, 167, 36);
+  color: white;
+  text-align: center;
+}
+
+/* ******* Navbar ******** */
+
+nav {
+  max-width: 100%;
+  background-color: rgb(207, 167, 36);
+  padding-left: 30px;
+  padding-right: 10px;
+  overflow: hidden;
+}
+
+.logo {
+  display: inline-block;
+  width: 175px;
+  vertical-align: middle;
+  color: white;
+  font-size: 1.5em;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1px;
+  font-size: .85em;
+}
+
+.linkButton { 
+  background: none;
+  border: none;
+  color:white;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.linkButton:hover {
+  background-color: white;
+  color: darkgreen;
+}
+
+.nav-item a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-item:hover {
+  background-color: white;
+}
+
+.nav-item:hover a {
+  color: darkgreen;
+}
+
+/* ********** Search Form *************** */
+
+/* .search {
+  background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg);
+} */
+
+.search-form-container {
+  background: #e1e1e1;
+  width: 365px;
+  margin: 15px auto;
+  background: -webkit-gradient( linear,left top, left bottom, color-stop(0, rgb(243,243,243)), color-stop(1, rgb(225,225,225)));
+  background: -moz-linear-gradient( center top, rgb(243,243,243) 0%, rgb(225,225,225) 100%);
+  border-radius: 17px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.3), 0 0 2px rgba(0,0,0,.3);
+}
+
+.search-input {
+  background: #fafafa; 
+  -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.3), 0 0 2px rgba(0,0,0,.3);
+  -moz-box-shadow: 1px 1px 2px rgba(0,0,0,.3), 0 0 2px rgba(0,0,0,.3);
+  background: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(250,250,250)), color-stop(1, rgb(230,230,230)));
+  background: -moz-linear-gradient( center top, rgb(250,250,250) 0%, rgb(230,230,230) 100%);
+  border: 0;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid rgba(255,255,255,.8);
+  font-size: 16px;
+  margin: 4px;
+  padding: 5px;
+  width: 250px;
+  border-radius: 17px;
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
+  box-shadow: -1px -1px 2px rgba(0,0,0,.3), 0 0 1px rgba(0,0,0,.2);
+  -webkit-box-shadow: -1px -1px 2px rgba(0,0,0,.3), 0 0 1px rgba(0,0,0,.2);
+  -moz-box-shadow: -1px -1px 2px rgba(0,0,0,.3), 0 0 1px rgba(0,0,0,.2);
+}
+
+.search-button {
+  background: #285dce;
+  background: -webkit-gradient( linear, left top, left bottom, color-stop(0, rgb(79,188,32)), color-stop(0.15, rgb(73,157,34)), color-stop(0.88, rgb(62,135,28)), color-stop(1, rgb(49,114,21)));
+  background: -moz-linear-gradient( center top, rgb(79,188,32) 0%, rgb(73,157,34) 15%, rgb(62,135,28) 88%, rgb(49,114,21) 100%);
+  border: 0;
+  color: #eee;
+  cursor: pointer;
+  float: right;
+  font: 16px 'Raleway', sans-serif;
+  font-weight: bold;
+  height: 30px;
+  margin: 4px 4px 0;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  width: 84px;
+  outline: none;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  box-shadow: -1px -1px 1px rgba(255,255,255,.5), 1px 1px 0 rgba(0,0,0,.4);
+  -moz-box-shadow: -1px -1px 1px rgba(255,255,255,.5), 1px 1px 0 rgba(0,0,0,.2);
+  -webkit-box-shadow: -1px -1px 1px rgba(255,255,255,.5), 1px 1px 0 rgba(0,0,0,.4);
 }
