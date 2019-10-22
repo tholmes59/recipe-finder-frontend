@@ -10,12 +10,22 @@ import ListRecipe from './components/ListRecipe';
 import Favorites from './components/Favorites'
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends React.Component {
 
+  state = {
+    clicked: false
+}
+ 
   componentDidMount() {
     this.props.getCurrentUser()  
+}
+
+handleFormClick = () => {
+  this.setState(prevState => ({
+  clicked: !prevState.clicked
+  }))
 }
 
   render() {
@@ -23,14 +33,18 @@ class App extends React.Component {
       <div className="App">
         <Router>
           <Route>
-            {this.props.loggedIn ? <Navbar /> : <Home />}
+            {this.props.loggedIn ? <Navbar /> : <Home clicked={this.state.clicked} handleFormClick={this.handleFormClick}/>}
           </Route>
-       <Route exact path='/signup' component={Signup}/>
-       <Route exact path='/login' component={Login}/>
-       <Route exact path='/search' component={Search}/>
-       <Route exact path='/favorites' component={Favorites}/>
-       <ListRecipe />
+          <Switch>
+            <Route exact path='/signup' render={({history}) => <Signup history={history}/>}/>
+            <Route exact path='/login' render={({history}) => <Login history={history}/>}/>
+            <Route exact path='/search' component={Search}/>
+            {/* <Route exact path='/recipe' component={ListRecipe}/> */}
+            <Route exact path='/favorites' component={Favorites}/>
+            <Route exact path='recipe/:id' render={props => <ListRecipe {...props} key={props.match.params.id} recipeItems={props.recipeItems}/>}/>
+        </Switch>
        </Router>
+       {/* <ListRecipe /> */}
        <Footer />
       </div>
     );
@@ -40,7 +54,8 @@ class App extends React.Component {
 const mapStateToProps = state => {
   return {
     loggedIn: !!state.currentUser,
-    favorites: state.favorites
+    favorites: state.favorites,
+    recipeItems: state.recipeSearch.recipe
   }
 }
 
