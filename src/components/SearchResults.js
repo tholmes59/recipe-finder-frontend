@@ -5,7 +5,7 @@ import { connect} from 'react-redux'
 
 const SearchResults = props => {
         
-    const recipeCards = props.recipes.length > 0 ? props.recipes.map(recipe => <RecipeCard key={recipe.recipe_id} recipe={recipe} />) : null;
+    const recipeCards = props.recipes.length > 0 ? props.recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />) : null;
         
     return (
         <div className="recipeCard-container">
