@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchRecipe } from '../actions/recipeSearch'
+import { Link } from 'react-router-dom'
 
 const FavoritesCard = props => {
 
@@ -12,7 +13,8 @@ const FavoritesCard = props => {
     return (
         <div>
             <p>{props.favorite.attributes.recipe_title}</p>
-            <button type="button" onClick={handleClick}>View Recipe</button>
+            <img src={props.favorite.attributes.recipe_image} alt="Food pic" className="recipeCard-img"/>
+            <button type="button" onClick={handleClick}><Link to={`/recipe/${props.favorite.attributes.recipe_identifier}`}>View Recipe</Link></button>
         </div>
     )
 }
