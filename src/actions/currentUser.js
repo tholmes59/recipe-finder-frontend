@@ -34,7 +34,7 @@ export const login = (credentials, history) => {
                 dispatch(setCurrentUser(r.data))
                 dispatch(getFavorites())
                 dispatch(resetLogin())
-                history.push('/')
+                history.push('/search')
             }
         })
         .catch(console.log)     
