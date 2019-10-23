@@ -15,14 +15,15 @@ export const displayRecipe = recipeItems => {
 
 export const searchRecipe = search => {
     return (dispatch) => {
-        return fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${search}`)
+        // return fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${search}`)
+        return fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${search}&number=20&apiKey=${API_KEY}`)
         .then(r => r.json())
         .then(recipes => {
-          // console.log(recipes.recipes)
+          console.log(recipes)
             if (recipes.error) {
               alert(recipes.error)
             } else {
-              dispatch(listRecipes(recipes.recipes))
+              dispatch(listRecipes(recipes))
               
             }
           })
@@ -32,14 +33,15 @@ export const searchRecipe = search => {
 
 export const fetchRecipe = id => {
   return (dispatch) => {
-      return fetch(`https://www.food2fork.com/api/get?key=${API_KEY}&rId=${id}`)
+      // return fetch(`https://www.food2fork.com/api/get?key=${API_KEY}&rId=${id}`)
+      return fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`)
       .then(r => r.json())
       .then(recipeItems => {
-        // console.log(recipeItems.recipe)
+        console.log(recipeItems)
           if (recipeItems.error) {
             alert(recipeItems.error)
           } else {
-            dispatch(displayRecipe(recipeItems.recipe))
+            dispatch(displayRecipe(recipeItems))
             
           }
         })
