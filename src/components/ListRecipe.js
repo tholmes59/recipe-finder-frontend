@@ -7,6 +7,7 @@ class ListRecipe extends React.Component {
 
     // componentDidMount() {
     //     this.props.fetchRecipe(this.props.recipeItems && this.props.recipeItems.recipe_id);
+    //     fetchRecipe(this.props.match.params.id)
     // }
 
     handleClick = event => {
@@ -15,20 +16,20 @@ class ListRecipe extends React.Component {
     }
 
     render() {
-        // console.log(this.props.recipeItems.recipe)
         return (
             <div>
                <h1>{this.props.recipeItems && this.props.recipeItems.title}</h1>
-               <img src={this.props.recipeItems && this.props.recipeItems.image_url} alt="Recipe" />
+               <img src={this.props.recipeItems && this.props.recipeItems.image} alt="Recipe" />
                <h3>Ingredients</h3>
-               {this.props.recipeItems && this.props.recipeItems.ingredients.map((item, index) => {
+               {this.props.recipeItems && this.props.recipeItems.extendedIngredients.map((item, index) => {
+                   console.log(item.original)
                    return (
                    <ul key={index}>
-                       {item}
+                       {item.original}
                    </ul>
                    )
                })}
-               <a href={this.props.recipeItems && this.props.recipeItems.source_url} target="_blank" rel="noopener noreferrer">Full Recipe Here</a><br/>
+               <a href={this.props.recipeItems && this.props.recipeItems.sourceUrl} target="_blank" rel="noopener noreferrer">Full Recipe Here</a><br/>
                <button onClick={this.handleClick}>Add to Favorites</button>
             </div>
         )
