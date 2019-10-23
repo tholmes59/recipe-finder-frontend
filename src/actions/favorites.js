@@ -44,7 +44,8 @@ export const addRecipeToFavorites = (recipe) => {
     return dispatch => {
         const recipeInfo = {
             recipe_title: recipe.title,
-            recipe_identifier: recipe.recipe_id
+            recipe_identifier: recipe.id,
+            recipe_image: recipe.image
         }
         console.log(recipeInfo)
         return fetch("http://localhost:3001/api/v1/recipes", {
