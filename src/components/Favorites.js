@@ -6,7 +6,7 @@ const Favorites = props => {
 
     const favoritesCards = props.favorites.length > 0 ? props.favorites.map(favorite => <FavoritesCard key={favorite.id} favorite={favorite} />) : 'No Favorites';
     return (
-        <div>
+        <div className="favoritesCard-container">
             {favoritesCards}
         </div>
     )
