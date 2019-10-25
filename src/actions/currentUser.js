@@ -104,7 +104,7 @@ export const signup = (credentials, history) => {
             dispatch(setCurrentUser(response.data))
             dispatch(getFavorites())
             dispatch(resetSignup())
-            history.push('/')
+            history.push('/search')
           }
         })
         .catch(console.log)
