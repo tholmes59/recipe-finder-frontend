@@ -19,7 +19,7 @@ export const searchRecipe = search => {
         return fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${search}&number=20&apiKey=${API_KEY}`)
         .then(r => r.json())
         .then(recipes => {
-          console.log(recipes)
+          // console.log(recipes)
             if (recipes.error) {
               alert(recipes.error)
             } else {
@@ -37,7 +37,7 @@ export const fetchRecipe = id => {
       return fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`)
       .then(r => r.json())
       .then(recipeItems => {
-        console.log(recipeItems)
+        // console.log(recipeItems)
           if (recipeItems.error) {
             alert(recipeItems.error)
           } else {
