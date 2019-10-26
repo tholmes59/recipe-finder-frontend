@@ -41,7 +41,7 @@ handleFormClick = () => {
             <Route exact path='/search' component={Search}/>
             {/* <Route exact path='/recipe' component={ListRecipe}/> */}
             <Route exact path='/favorites' component={Favorites}/>
-            <Route exact path='recipe/:id' render={props => <ListRecipe {...props} key={props.match.params.id} recipeItems={props.recipeItems}/>}/>
+            <Route exact path='/recipe/:id' render={props => <ListRecipe {...props} key={this.props.recipeItems && this.props.recipeItems.id} recipeItems={this.props.recipeItems}/>}/>
         </Switch>
        </Router>
        {/* <ListRecipe /> */}
