@@ -21,7 +21,7 @@ class Home extends React.Component {
 
     render () {
         return(
-            <div>
+            <div className="home-container">
                 <h2>Welcome to Recipe Finder</h2>
                 { !this.state.clicked ?
                 <span>
