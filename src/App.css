@@ -3,12 +3,14 @@
 *:before {
   margin: 0;
   box-sizing: border-box;
+  /* background: #f6f1e7; */
 }
 
 .App {
   text-align: center;
   background: #f6f1e7;
   min-height: 100vh;
+  /* margin: 0; */
   /* margin: 0px !important; */
   /* background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg); */
 }
@@ -16,30 +18,55 @@
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background: #f6f1e7;
   min-height: 100vh;
-  /* margin: 0px !important; */
+  /* margin: 0px; */
   /* background: whitesmoke; */
   /* background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg); */
 }
 
-/* .home {
-  background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg);
-  min-width: 1020px;
-  height: 960px;
-  background-color: #333;
-  background-size: cover;
-  background-position: 50%;
-  display: grid;
-  background-position: center;
-  justify-content: center;
-  align-items: center; 
-} */
+/* ********** Home Page Styling ************ */
 
-/* .home-container {
-  background-image: url("assets/recipe.jpg");
-  object-fit: contain;
-  height: 1000px;
-  background-repeat: no-repeat; */
-/* } */
+.home-container {
+ /* background-color: whitesmoke; */
+ width: auto;
+ padding-top: 30px;
+ padding-bottom: 15px;
+}
+
+.home-container-buttons p {
+  /* background-color: whitesmoke; */
+  margin: 5px;
+  font-size: 1.2em;
+ }
+
+ .home-button {
+  background-color: rgb(49, 3, 3);
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: .3s ease-out;
+  border-radius: 20px;
+}
+
+.home-linkbutton { 
+  background: none;
+  border: none;
+  color:white;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.home-button a {
+  text-decoration: none;
+}
+
+.home-button:hover {
+  background-color: green;
+}
 
  /* ***** Signup and Login Forms ****** */
 
