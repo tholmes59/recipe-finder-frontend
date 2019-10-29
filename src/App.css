@@ -68,20 +68,6 @@
   background-color: green;
 }
 
- /* ***** Signup and Login Forms ****** */
-
-/* .form {
-  background:whitesmoke;
-	width:500px;
-	max-width:100%;
-	box-sizing:border-box;
-	padding:15px;
-	margin: auto;
-	position:relative;
-  z-index:1;
-  border-style: solid;
-} */
-
 /* **** RecipeCard styling **** */
 
 .recipeCard-container {
@@ -189,7 +175,6 @@
   background-color: green;
 }
 
-
 /* ********** Footer ************ */
 
 .footer {
@@ -290,6 +275,20 @@ nav {
 }
 
 /* ********** Search Form *************** */
+
+.search h1, h3, h4 {
+  padding: 5px;
+}
+
+.search p {
+  padding-top: 5px;
+  font-size: .9em;
+}
+
+.search span {
+  font-family: "Paprika",sans-serif; 
+  color: #00843c;
+}
 
 .search-form-container {
   background: #e1e1e1;
