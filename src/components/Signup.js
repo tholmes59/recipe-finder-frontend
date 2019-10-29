@@ -22,7 +22,7 @@ class Signup extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        this.props.signup(this.state, this.history)
+        this.props.signup(this.state, this.props.history)
         this.setState({
             name: '',
             username: '',
