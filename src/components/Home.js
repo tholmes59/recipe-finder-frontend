@@ -21,16 +21,22 @@ class Home extends React.Component {
 
     render () {
         return(
+            <>
             <div className="home-container">
-                <h2>Welcome to Recipe Finder</h2>
-                { !this.state.clicked ?
-                <span>
-                    <button onClick={this.handleClick}><Link to="/signup">Sign Up</Link></button>
-                    OR <button onClick={this.handleClick}><Link to="/login">Login</Link></button>
-                </span>
-                : null
-                }
-            </div>
+                <h1>Welcome to Recipe Finder</h1><br/>
+                <p>A web application to help you find a good recipe for what you have in your kitchen</p>
+                </div>
+                <div className="home-container-buttons">
+                    { !this.state.clicked ?
+                    <span>
+                        <p>Please</p>
+                        <button onClick={this.handleClick} className="home-button"><Link to="/signup" className="home-linkbutton">Sign Up</Link></button>
+                        <p>-or-</p> <button onClick={this.handleClick} className="home-button"><Link to="/login" className="home-linkbutton">Login</Link></button>
+                    </span>
+                    : null
+                    }
+                </div>
+            </>
         )
     }
 }
