@@ -68,3 +68,34 @@ export const addRecipeToFavorites = (recipe) => {
         .catch(console.log)
     }
 }
+
+export const deleteFavoriteSuccess = favoriteId => {
+    return {
+      type: "DELETE_FAVORITE",
+      favoriteId
+    }
+  }
+
+export const deleteFavorite = (favoriteId, history) => {
+    return dispatch => {
+      return fetch(`http://localhost:3001/api/v1/favorites/${favoriteId}`, {
+        credentials: "include",
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(r => r.json())
+        .then(resp => {
+          if (resp.error) {
+            alert(resp.error)
+          } else {
+            dispatch(deleteFavoriteSuccess(favoriteId))
+            history.push(`/favorites`)
+          }
+        })
+        .catch(console.log)
+  
+    }
+  
+  }
