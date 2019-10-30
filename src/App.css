@@ -370,6 +370,18 @@ nav {
     font-size: 12px;
     height: 25px;
   }
+  .search h1 {
+    font-size: .8em;
+  }
+  .search h3 {
+    font-size: .6em;
+  }
+  .search h4 {
+    font-size: .1em;
+  }
+  .search p {
+    font-size: .3em;
+  }
 }
 
 /* ********** Login Form *************** */
