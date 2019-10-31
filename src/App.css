@@ -109,7 +109,7 @@
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  padding: 5px 5px;
+  /* padding: 5px 5px; */
   text-decoration: none;
   font-size: 1em;
 }
@@ -148,6 +148,7 @@
 
 .favoritesCard-button {
   background-color: rgb(49, 3, 3);
+  margin: 2px;
   padding: 10px 20px;
   color: white;
   text-decoration: none;
@@ -162,7 +163,7 @@
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
-  padding: 5px 5px;
+  /* padding: 5px 5px; */
   text-decoration: none;
   font-size: 1em;
 }
@@ -276,8 +277,12 @@ nav {
 
 /* ********** Search Form *************** */
 
-.search h1, h3, h4 {
+.search h1, h2, h3, h4 {
   padding: 5px;
+}
+
+.search h1 {
+  font-size: 2.5em;
 }
 
 .search p {
@@ -373,14 +378,17 @@ nav {
   .search h1 {
     font-size: .8em;
   }
-  .search h3 {
+  .search h2 {
     font-size: .6em;
+  }
+  .search h3 {
+    font-size: .5em;
   }
   .search h4 {
     font-size: .1em;
   }
   .search p {
-    font-size: .3em;
+    font-size: .1em;
   }
 }
 
