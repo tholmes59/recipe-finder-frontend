@@ -91,6 +91,7 @@ export const deleteFavorite = (favoriteId, history) => {
             alert(resp.error)
           } else {
             dispatch(deleteFavoriteSuccess(favoriteId))
+            alert('Removed from Favorites!')
             history.push(`/favorites`)
           }
         })
