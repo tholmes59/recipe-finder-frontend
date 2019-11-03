@@ -6,6 +6,10 @@
   /* background: #f6f1e7; */
 }
 
+html {
+  background: #f6f1e7;
+}
+
 .App {
   text-align: center;
   background: #f6f1e7;
@@ -570,23 +574,37 @@ nav {
 
 /* *********** ListRecipe Display ***************** */
 
-.recipe-container {
+/* .recipe-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 10px;
-  /* grid-template-areas: "recipe-image-container recipe-info-container" "recipe-ingredients-container recipe-ingredients-container"; */
   margin: 20px;
   padding: 5px;
   max-width: 100%;
+} */
 
+.recipe-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+  margin: 20px;
+  padding: 5px;
+  max-width: 100%;
 }
 
 .recipe-ingredients-container {
-  grid-column: span 2;
+  /* grid-column: span 2; */
   text-align: left;
   padding: 10px;
 }
+
+/* .recipe-ingredients-container {
+  grid-column: span 2;
+  text-align: left;
+  padding: 10px;
+} */
 
 .recipe-instructions-container {
   grid-column: span 2;
@@ -599,6 +617,11 @@ nav {
   border-radius: 8px;
 }
 
+.recipe-img{
+  margin: 2px;
+
+}
+
 .recipe-button {
   /* display: block; */
   background-color: rgb(49, 3, 3);
@@ -608,6 +631,7 @@ nav {
   text-align: center;
   transition: .3s ease-out;
   border-radius: 8px;
+  margin: 2px;
 }
 
 .recipe-linkbutton { 
@@ -619,4 +643,18 @@ nav {
   display: inline-block;
   text-decoration: none;
   font-size: 1em;
+}
+
+@media only screen and (max-width : 800px) {
+  .recipe-container {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr;
+    max-width: 100%;
+  }
+  .recipe-instructions-container {
+    grid-column: span 1;
+  }
+  .recipe-img {
+    max-width: 100%;
+  }
 }
