@@ -17,13 +17,8 @@ class ListRecipe extends React.Component {
                     <h1>{this.props.recipeItems && this.props.recipeItems.title}</h1>
                     <img src={this.props.recipeItems && this.props.recipeItems.image} alt="Recipe" className="recipe-img"/><br/>
                     <button className="recipe-button"><a className="recipe-linkbutton" href={this.props.recipeItems && this.props.recipeItems.sourceUrl} target="_blank" rel="noopener noreferrer">Full Recipe Here</a></button><br/>
-                    <button className="recipe-button" onClick={this.handleClick}>Add to Favorites</button> 
+                    <button className="recipe-button" onClick={this.handleClick}>Add to Favorites</button> <br/>
                 </div>
-                {/* <div className="recipe-info-container">
-                    <h1>{this.props.recipeItems && this.props.recipeItems.title}</h1>
-                    <button className="recipe-button"><a className="recipe-linkbutton" href={this.props.recipeItems && this.props.recipeItems.sourceUrl} target="_blank" rel="noopener noreferrer">Full Recipe Here</a></button><br/>
-                    <button className="recipe-button" onClick={this.handleClick}>Add to Favorites</button>
-                </div> */}
                 <div className="recipe-ingredients-container">
                     <h3>Ingredients</h3>
                     {this.props.recipeItems && this.props.recipeItems.extendedIngredients.map((item, index) => {
