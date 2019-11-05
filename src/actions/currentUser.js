@@ -16,8 +16,6 @@ export const clearCurrentUser = () => {
     }
 }
 
-
-
 export const login = (credentials, history) => {
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/login", {
