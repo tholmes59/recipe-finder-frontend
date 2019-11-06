@@ -15,7 +15,6 @@ export const displayRecipe = recipeItems => {
 
 export const searchRecipe = search => {
     return (dispatch) => {
-        // return fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${search}`)
         return fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${search}&number=20&apiKey=${API_KEY}`)
         .then(r => r.json())
         .then(recipes => {
@@ -33,7 +32,6 @@ export const searchRecipe = search => {
 
 export const fetchRecipe = id => {
   return (dispatch) => {
-      // return fetch(`https://www.food2fork.com/api/get?key=${API_KEY}&rId=${id}`)
       return fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}`)
       .then(r => r.json())
       .then(recipeItems => {
