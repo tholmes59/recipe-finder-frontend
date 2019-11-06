@@ -16,7 +16,6 @@ class RecipeCard extends React.Component {
             <div className="recipeCard">
                 <img src={this.props.recipe.image} alt="Food pic" className="recipeCard-img"/><br/><br/>
                 <p>{this.props.recipe.title}</p><br/>
-                {/* <p>Recipe provided by {this.props.recipe.publisher}</p> */}
                 <button type="button" onClick={this.handleClick} className="recipeCard-button"><Link className="linkbutton" to={`/recipe/${this.props.recipe.id}`}>Recipe Details</Link></button>
             </div>
             </>
