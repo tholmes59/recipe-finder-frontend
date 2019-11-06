@@ -39,12 +39,10 @@ handleFormClick = () => {
             <Route exact path='/signup' render={({history}) => <Signup history={history}/>}/>
             <Route exact path='/login' render={({history}) => <Login history={history}/>}/>
             <Route exact path='/search' component={Search}/>
-            {/* <Route exact path='/recipe' component={ListRecipe}/> */}
             <Route exact path='/favorites' component={Favorites}/>
             <Route exact path='/recipe/:id' render={props => <ListRecipe {...props} key={this.props.recipeItems && this.props.recipeItems.id} recipeItems={this.props.recipeItems}/>}/>
         </Switch>
        </Router>
-       {/* <ListRecipe /> */}
        <Footer />
       </div>
     );
