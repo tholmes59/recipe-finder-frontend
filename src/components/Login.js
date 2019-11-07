@@ -34,7 +34,7 @@ class Login extends React.Component {
             <div className="login-container">
                 <div className="login-form">
                     <form onSubmit={this.handleSubmit} >
-                    <h2 className="login-header">Login</h2>
+                        <h2 className="login-header">Login</h2>
                         <input type="text" className="login-user" placeholder="Enter Username..." value={this.state.username} name="username" onChange={this.handleChange} /><br/>
                         <input type="password" className="login-pass" placeholder="Enter Password..." value={this.state.password} name="password" onChange={this.handleChange} /><br/>
                         <input type="submit" className="login-button" />
