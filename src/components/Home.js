@@ -24,7 +24,7 @@ class Home extends React.Component {
             <>
             <div className="home-container">
                 <h1>Welcome to Recipe Finder</h1><br/>
-                <p>A web application to help you find a good recipe for what you have in your kitchen</p>
+                <p>A web application to help you find a great recipe for what you have in your kitchen</p>
                 </div>
                 <div className="home-container-buttons">
                     { !this.state.clicked ?
