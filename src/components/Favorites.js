@@ -4,7 +4,7 @@ import FavoritesCard from './FavoritesCard'
 
 const Favorites = props => {
 
-    const favoritesCards = props.favorites.length > 0 ? props.favorites.map(favorite => <FavoritesCard key={favorite.id} favorite={favorite} />) : 'No Favorites';
+    const favoritesCards = props.favorites.length > 0 ? props.favorites.map(favorite => <FavoritesCard key={favorite.id} favorite={favorite} />) : 'No Favorites Saved Yet';
     return (
         <div className="favoritesCard-container">
             {favoritesCards}
