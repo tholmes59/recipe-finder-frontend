@@ -3,7 +3,6 @@
 *:before {
   margin: 0;
   box-sizing: border-box;
-  /* background: #f6f1e7; */
 }
 
 html {
@@ -14,30 +13,24 @@ html {
   text-align: center;
   background: #f6f1e7;
   min-height: 100vh;
-  /* margin: 0; */
-  /* margin: 0px !important; */
   /* background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg); */
 }
 .body {
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background: #f6f1e7;
   min-height: 100vh;
-  /* margin: 0px; */
-  /* background: whitesmoke; */
   /* background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg); */
 }
 
 /* ********** Home Page Styling ************ */
 
 .home-container {
- /* background-color: whitesmoke; */
  width: auto;
  padding-top: 30px;
  padding-bottom: 15px;
 }
 
 .home-container-buttons p {
-  /* background-color: whitesmoke; */
   margin: 5px;
   font-size: 1.2em;
  }
@@ -267,7 +260,6 @@ nav {
 @media only screen and (max-width : 375px) {
   .logo{ 
     font-size: 1em;
-    /* margin:   */
   }
   .nav-links{
     font-size: .6em;
@@ -368,7 +360,6 @@ nav {
 @media only screen and (max-width : 375px) {
   .search-form-container{ 
     width: 230px;
-    /* margin:   */
   }
   .search-input{
     width: 150px;
@@ -482,8 +473,6 @@ nav {
   .login-container{ width: 30% }
 }
 
-/* h2{ color: #fff; margin-top: 25px; } */
-
 /* ********** Signup Form *************** */
 
 .signup-container {
@@ -570,19 +559,7 @@ nav {
   .signup-container{ width: 30% }
 }
 
-/* h2{ color: #fff; margin-top: 25px; } */
-
 /* *********** ListRecipe Display ***************** */
-
-/* .recipe-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  margin: 20px;
-  padding: 5px;
-  max-width: 100%;
-} */
 
 .recipe-container {
   display: grid;
@@ -619,7 +596,6 @@ nav {
 
 .recipe-img{
   margin: 2px;
-
 }
 
 .recipe-button {
