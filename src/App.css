@@ -13,13 +13,11 @@ html {
   text-align: center;
   background: #f6f1e7;
   min-height: 100vh;
-  /* background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg); */
 }
 .body {
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background: #f6f1e7;
   min-height: 100vh;
-  /* background-image: url(https://making-the-web.com/sites/default/files/clipart/154843/free-food-pics-154843-7620518.jpg); */
 }
 
 /* ********** Home Page Styling ************ */
