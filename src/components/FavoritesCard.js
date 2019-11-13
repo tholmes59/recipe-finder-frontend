@@ -14,7 +14,9 @@ class FavoritesCard extends React.Component {
 
     handleDelete = event => {
         event.preventDefault()
+        if (window.confirm("Are you sure you want to remove from Favorites?")) {
         this.props.deleteFavorite(this.props.favorite.id, this.props.history)
+        } 
     }
     render() {
         return (
